@@ -1,3 +1,4 @@
+import { ApiError } from "../lib/apiError"
 import { apiErrorMessage } from "../lib/auth"
 import { normalizeMessage, normalizeRoom } from "../types"
 import type { Member, Message, Room, User } from "../types"
@@ -39,7 +40,7 @@ async function request<T>(path: string, token: string, options?: RequestInit): P
   })
   const body = await parseBody(res)
   if (!res.ok) {
-    throw new Error(apiErrorMessage(body, `Request failed: ${res.status}`))
+    throw new ApiError(apiErrorMessage(body, `Request failed: ${res.status}`), res.status)
   }
   return body as T
 }

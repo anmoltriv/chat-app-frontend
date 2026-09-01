@@ -21,7 +21,7 @@ const statusLabels: Record<WsStatus, string> = {
 }
 
 export default function UserProfile({ user, wsStatus, onLogout }: UserProfileProps) {
-  const initials = user.username.slice(0, 2).toUpperCase()
+  const initials = (user.username || "?").slice(0, 2).toUpperCase()
 
   return (
     <div

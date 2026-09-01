@@ -60,12 +60,12 @@ export default function AppLayout() {
     navigate("/login", { replace: true })
   }
 
-  if (!user) return null
+  const shellUser = user ?? { id: 0, username: "…" }
 
   return (
     <div style={{ display: "flex", height: "100%", background: "var(--background)" }}>
       <Sidebar
-        user={user}
+        user={shellUser}
         rooms={rooms}
         activeRoomId={activeRoom?.id ?? null}
         wsStatus={wsStatus}

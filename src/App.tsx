@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { Navigate, Route, Routes, useLocation } from "react-router-dom"
 import ProtectedRoute from "./components/ProtectedRoute"
+import RouteErrorBoundary from "./components/RouteErrorBoundary"
 import { AuthProvider, useAuth } from "./context/AuthContext"
 import { ChatProvider } from "./context/ChatContext"
 import AppLayout from "./pages/AppLayout"
@@ -18,9 +19,11 @@ function AuthenticatedApp() {
   const { token } = useAuth()
   return (
     <ProtectedRoute>
-      <ChatProvider token={token}>
-        <AppLayout />
-      </ChatProvider>
+      <RouteErrorBoundary>
+        <ChatProvider token={token}>
+          <AppLayout />
+        </ChatProvider>
+      </RouteErrorBoundary>
     </ProtectedRoute>
   )
 }
@@ -45,9 +48,18 @@ function DocumentTitle() {
   return null
 }
 
+function StripTrailingSlash() {
+  const { pathname, search, hash } = useLocation()
+  if (pathname.length > 1 && pathname.endsWith("/")) {
+    return <Navigate to={`${pathname.slice(0, -1)}${search}${hash}`} replace />
+  }
+  return null
+}
+
 export default function App() {
   return (
     <AuthProvider>
+      <StripTrailingSlash />
       <DocumentTitle />
       <Routes>
         <Route path="/" element={<Home />} />

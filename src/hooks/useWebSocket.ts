@@ -28,7 +28,13 @@ export function useWebSocket({ token, onMessage }: UseWebSocketOptions) {
     const connect = () => {
       if (cancelled) return
       setStatus("connecting")
-      const socket = new WebSocket(`${WS_URL}?token=${encodeURIComponent(token)}`)
+      let socket: WebSocket
+      try {
+        socket = new WebSocket(`${WS_URL}?token=${encodeURIComponent(token)}`)
+      } catch {
+        if (!cancelled) setStatus("error")
+        return
+      }
       wsRef.current = socket
 
       socket.onopen = () => {

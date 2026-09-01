@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react"
 import type { ReactNode } from "react"
+import { ApiError } from "../lib/apiError"
 import { getMe } from "../services/api"
 import type { User } from "../types"
 
@@ -56,8 +57,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(fresh)
       })
       .catch((err: unknown) => {
-        const message = err instanceof Error ? err.message : ""
-        if (/401|403|expired|revoked|malformed/i.test(message)) {
+        if (err instanceof ApiError && (err.status === 401 || err.status === 403)) {
           clearAuth()
         }
       })

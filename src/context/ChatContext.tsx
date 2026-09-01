@@ -139,11 +139,18 @@ export function ChatProvider({
         break
       case "SEND_MESSAGE":
       case "NEW_MESSAGE":
-        dispatch({ type: "ADD_MESSAGE", message: normalizeMessage(asRecord(envelope.data)) })
-        break
       case "EDIT_MESSAGE":
       case "MESSAGE_EDITED":
-        dispatch({ type: "UPDATE_MESSAGE", message: normalizeMessage(asRecord(envelope.data)) })
+        try {
+          const message = normalizeMessage(asRecord(envelope.data))
+          if (!Number.isFinite(message.id) || !Number.isFinite(message.roomId)) break
+          dispatch({
+            type: envelope.type === "EDIT_MESSAGE" || envelope.type === "MESSAGE_EDITED" ? "UPDATE_MESSAGE" : "ADD_MESSAGE",
+            message,
+          })
+        } catch {
+          break
+        }
         break
       case "DELETE_MESSAGE":
       case "MESSAGE_DELETED": {
