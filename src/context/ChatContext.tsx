@@ -26,6 +26,14 @@ type Action =
   | { type: "SET_WS_STATUS"; status: WsStatus }
   | { type: "SET_ERROR"; error: string | null }
 
+function bumpRoomToTop(rooms: Room[], roomId: number, preview: string): Room[] {
+  const index = rooms.findIndex((r) => r.id === roomId)
+  if (index === -1) return rooms
+  const room = { ...rooms[index], lastMessagePreview: preview }
+  if (index === 0) return [room, ...rooms.slice(1)]
+  return [room, ...rooms.slice(0, index), ...rooms.slice(index + 1)]
+}
+
 function reducer(state: ChatState, action: Action): ChatState {
   switch (action.type) {
     case "SET_ROOMS":
@@ -53,6 +61,7 @@ function reducer(state: ChatState, action: Action): ChatState {
           ...state.messages,
           [action.message.roomId]: [...roomMsgs, action.message],
         },
+        rooms: bumpRoomToTop(state.rooms, action.message.roomId, action.message.content),
       }
     }
     case "UPDATE_MESSAGE": {
