@@ -50,9 +50,9 @@ export default function MessageComposer({
 
   return (
     <div
+      className="composer"
       style={{
         borderTop: "1px solid var(--border)",
-        padding: "0.75rem 1.25rem",
         background: "var(--card)",
       }}
     >
@@ -83,7 +83,7 @@ export default function MessageComposer({
         <textarea
           ref={textareaRef}
           className="talkative-input"
-          placeholder={editTarget ? "Edit message…" : "Send a message… (Enter to send, Shift+Enter for newline)"}
+          placeholder={editTarget ? "Edit message…" : "Message"}
           value={text}
           onChange={(e) => setText(e.target.value)}
           onKeyDown={handleKeyDown}

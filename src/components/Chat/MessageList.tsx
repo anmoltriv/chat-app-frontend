@@ -51,10 +51,10 @@ export default function MessageList({
 
   return (
     <div
+      className="message-list"
       style={{
         flex: 1,
         overflowY: "auto",
-        padding: "1rem 1.25rem",
         display: "flex",
         flexDirection: "column",
         gap: "0.25rem",
