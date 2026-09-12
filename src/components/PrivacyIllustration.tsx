@@ -26,15 +26,17 @@ export default function PrivacyIllustration() {
       onMouseLeave={handleMouseLeave}
       style={{ cursor: "pointer" }}
       className="relative w-full max-w-2xl mx-auto select-none"
+      style={{ overflow: "hidden" }}
     >
       <div
-        style={{
+      style={{
           background: "linear-gradient(180deg, var(--card) 0%, var(--muted) 100%)",
           border: "1px solid var(--border)",
-          borderRadius: 20,
-          padding: "2.5rem 2rem",
-          transition: "transform 0.12s ease",
-          transform: `perspective(900px) rotateX(${-offset.y * 0.6}deg) rotateY(${offset.x * 0.6}deg)`,
+          borderRadius: 16,
+          padding: "0.85rem 0.7rem",
+          maxWidth: "100%",
+          overflow: "hidden",
+          transform: "none",
           boxShadow: "0 24px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(124,92,252,0.08)",
         }}
       >
@@ -100,7 +102,7 @@ export default function PrivacyIllustration() {
           <path d="M513 228 l5 0 M516 225 l0 6" stroke="#fff" strokeWidth="1.2" />
         </svg>
 
-        <div className="mt-4 flex items-center justify-center gap-3">
+        <div className="mt-3 flex items-center justify-center gap-2 flex-wrap">
           <div
             style={{
               background: "rgba(124,92,252,0.12)",

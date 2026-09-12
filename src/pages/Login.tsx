@@ -26,21 +26,11 @@ export default function Login() {
   }
 
   return (
-    <div style={{ display: "flex", height: "100%" }}>
-      <div style={{ width: "40%", minWidth: 300, flexShrink: 0 }}>
+    <div className="auth-layout">
+      <div className="auth-brand">
         <AuthLeftPanel mode="login" />
       </div>
-      <div
-        style={{
-          flex: 1,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "2rem",
-          background: "var(--background)",
-          overflowY: "auto",
-        }}
-      >
+      <div className="auth-form">
         <LoginForm
           loading={loading}
           error={error}

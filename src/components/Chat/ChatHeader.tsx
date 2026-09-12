@@ -4,28 +4,25 @@ interface ChatHeaderProps {
   room: Room
   onOpenMembers: () => void
   onLeave: () => void
+  onBack?: () => void
 }
 
-export default function ChatHeader({ room, onOpenMembers, onLeave }: ChatHeaderProps) {
+export default function ChatHeader({ room, onOpenMembers, onLeave, onBack }: ChatHeaderProps) {
   return (
-    <div
-      style={{
-        height: 56,
-        padding: "0 1.25rem",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        borderBottom: "1px solid var(--border)",
-        background: "var(--card)",
-        flexShrink: 0,
-      }}
-    >
-      <div style={{ display: "flex", alignItems: "center", gap: "0.625rem" }}>
+    <div className="chat-header">
+      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", minWidth: 0, flex: 1 }}>
+        {onBack && (
+          <button type="button" className="icon-btn chat-header-back" title="Back to rooms" onClick={onBack}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        )}
         <div
           style={{
-            width: 32,
-            height: 32,
-            borderRadius: 8,
+            width: 36,
+            height: 36,
+            borderRadius: "50%",
             background: "rgba(124,92,252,0.15)",
             display: "flex",
             alignItems: "center",
@@ -33,15 +30,26 @@ export default function ChatHeader({ room, onOpenMembers, onLeave }: ChatHeaderP
             fontWeight: 700,
             fontSize: 14,
             color: "#a78bfa",
+            flexShrink: 0,
           }}
         >
           #
         </div>
-        <div>
-          <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "var(--foreground)", lineHeight: 1.2 }}>
+        <div style={{ minWidth: 0 }}>
+          <p
+            style={{
+              fontSize: "0.9375rem",
+              fontWeight: 600,
+              color: "var(--foreground)",
+              lineHeight: 1.2,
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+          >
             {room.name}
           </p>
-          <p style={{ fontSize: "0.75rem", color: "var(--muted-foreground)" }}>
+          <p style={{ fontSize: "0.75rem", color: "var(--muted-foreground)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
             Room #{room.id}
             {typeof room.memberCount === "number" &&
               ` · ${room.memberCount} member${room.memberCount !== 1 ? "s" : ""}`}
@@ -64,24 +72,16 @@ export default function ChatHeader({ room, onOpenMembers, onLeave }: ChatHeaderP
         </div>
       </div>
 
-      <div style={{ display: "flex", gap: "0.375rem" }}>
-        <button
-          onClick={onOpenMembers}
-          title="View members"
-          style={iconBtn}
-        >
+      <div style={{ display: "flex", gap: "0.375rem", flexShrink: 0 }}>
+        <button type="button" onClick={onOpenMembers} title="View members" className="icon-btn">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2" />
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" strokeWidth="2" />
           </svg>
         </button>
 
-        <button
-          onClick={onLeave}
-          title="Leave room"
-          style={{ ...iconBtn, color: "#f87171" }}
-        >
+        <button type="button" onClick={onLeave} title="Leave room" className="icon-btn" style={{ color: "#f87171" }}>
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             <polyline points="16,17 21,12 16,7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -91,18 +91,4 @@ export default function ChatHeader({ room, onOpenMembers, onLeave }: ChatHeaderP
       </div>
     </div>
   )
-}
-
-const iconBtn: React.CSSProperties = {
-  width: 34,
-  height: 34,
-  borderRadius: 8,
-  background: "transparent",
-  border: "1px solid var(--border)",
-  cursor: "pointer",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  color: "var(--muted-foreground)",
-  transition: "background 0.12s, color 0.12s",
 }

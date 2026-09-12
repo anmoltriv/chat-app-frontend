@@ -112,7 +112,7 @@ export default function MessageBubble({
             )}
           </div>
         )}
-        <div style={{ maxWidth: "72%", minWidth: 0 }}>
+        <div className="msg-max" style={{ minWidth: 0 }}>
           <div
             style={{
               background: "var(--primary)",
@@ -160,7 +160,7 @@ export default function MessageBubble({
         <div style={{ width: 32, flexShrink: 0 }} />
       )}
 
-      <div style={{ maxWidth: "72%", minWidth: 0 }}>
+      <div className="msg-max" style={{ minWidth: 0 }}>
         {showSender && (
           <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 3 }}>
             <span style={{ fontSize: "0.8125rem", fontWeight: 600, color: "var(--card-foreground)" }}>

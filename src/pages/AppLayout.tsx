@@ -63,7 +63,7 @@ export default function AppLayout() {
   const shellUser = user ?? { id: 0, username: "…" }
 
   return (
-    <div style={{ display: "flex", height: "100%", background: "var(--background)" }}>
+    <div className={`app-shell ${activeRoom ? "room-open" : "list-only"}`}>
       <Sidebar
         user={shellUser}
         rooms={rooms}
@@ -75,7 +75,7 @@ export default function AppLayout() {
         onLogout={handleLogout}
       />
 
-      <main style={{ flex: 1, overflow: "hidden", display: "flex", flexDirection: "column", background: "var(--card)" }}>
+      <main className="chat-pane">
         {roomsError && (
           <div
             style={{
@@ -142,7 +142,7 @@ function EmptyState({ missing }: { missing?: boolean }) {
         <p style={{ fontSize: "0.875rem" }}>
           {missing
             ? "This room is not in your list. Join it from the sidebar if you have the ID."
-            : "Choose a room from the sidebar, or create one to get started."}
+            : "Choose a room from the list, or create one to get started."}
         </p>
       </div>
     </div>

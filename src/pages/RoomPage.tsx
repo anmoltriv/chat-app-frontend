@@ -92,6 +92,7 @@ export default function RoomPage({ room }: RoomPageProps) {
         room={room}
         onOpenMembers={() => setShowMembers(true)}
         onLeave={() => setShowLeave(true)}
+        onBack={() => navigate("/app")}
       />
 
       <MessageList

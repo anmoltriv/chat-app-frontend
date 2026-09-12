@@ -4,13 +4,19 @@ interface RoomListProps {
   rooms: Room[]
   activeRoomId: number | null
   onSelect: (room: Room) => void
+  emptyLabel?: string
 }
 
-export default function RoomList({ rooms, activeRoomId, onSelect }: RoomListProps) {
+function roomInitial(name: string) {
+  const trimmed = name.trim()
+  return (trimmed[0] || "#").toUpperCase()
+}
+
+export default function RoomList({ rooms, activeRoomId, onSelect, emptyLabel }: RoomListProps) {
   if (rooms.length === 0) {
     return (
       <p style={{ padding: "0.75rem", fontSize: "0.8125rem", color: "var(--muted-foreground)" }}>
-        No rooms yet. Join or create one.
+        {emptyLabel ?? "No rooms yet. Join or create one."}
       </p>
     )
   }
@@ -22,79 +28,55 @@ export default function RoomList({ rooms, activeRoomId, onSelect }: RoomListProp
         return (
           <button
             key={room.id}
+            type="button"
+            className={`room-row${active ? " active" : ""}`}
             onClick={() => onSelect(room)}
-            style={{
-              width: "100%",
-              textAlign: "left",
-              padding: "0.5rem 0.75rem",
-              borderRadius: 8,
-              background: active ? "rgba(124,92,252,0.15)" : "transparent",
-              border: active ? "1px solid rgba(124,92,252,0.25)" : "1px solid transparent",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              transition: "background 0.1s",
-            }}
-            onMouseEnter={(e) => {
-              if (!active) (e.currentTarget as HTMLButtonElement).style.background = "var(--secondary)"
-            }}
-            onMouseLeave={(e) => {
-              if (!active) (e.currentTarget as HTMLButtonElement).style.background = "transparent"
-            }}
           >
-            <span
-              style={{
-                fontSize: "0.9375rem",
-                fontWeight: 600,
-                color: active ? "#a78bfa" : "var(--muted-foreground)",
-                flexShrink: 0,
-              }}
-            >
-              #
-            </span>
+            <span className="room-avatar">{roomInitial(room.name)}</span>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <p
-                style={{
-                  fontSize: "0.875rem",
-                  fontWeight: active ? 600 : 500,
-                  color: active ? "var(--foreground)" : "var(--card-foreground)",
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                }}
-              >
-                {room.name}
-              </p>
-              {room.lastMessagePreview && (
+              <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                 <p
                   style={{
-                    fontSize: "0.75rem",
-                    color: "var(--muted-foreground)",
+                    fontSize: "0.9375rem",
+                    fontWeight: active ? 600 : 500,
+                    color: active ? "var(--foreground)" : "var(--card-foreground)",
                     whiteSpace: "nowrap",
                     overflow: "hidden",
                     textOverflow: "ellipsis",
+                    margin: 0,
                   }}
                 >
-                  {room.lastMessagePreview}
+                  {room.name}
                 </p>
-              )}
-            </div>
-            {room.isAdmin && (
-              <span
+                {room.isAdmin && (
+                  <span
+                    style={{
+                      fontSize: "0.625rem",
+                      fontWeight: 600,
+                      color: "#a78bfa",
+                      background: "rgba(124,92,252,0.15)",
+                      borderRadius: 4,
+                      padding: "1px 4px",
+                      flexShrink: 0,
+                    }}
+                  >
+                    Admin
+                  </span>
+                )}
+              </div>
+              <p
                 style={{
-                  fontSize: "0.625rem",
-                  fontWeight: 600,
-                  color: "#a78bfa",
-                  background: "rgba(124,92,252,0.15)",
-                  borderRadius: 4,
-                  padding: "1px 4px",
-                  flexShrink: 0,
+                  fontSize: "0.75rem",
+                  color: "var(--muted-foreground)",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  margin: "0.15rem 0 0",
                 }}
               >
-                Admin
-              </span>
-            )}
+                {room.lastMessagePreview || `Room #${room.id}`}
+              </p>
+            </div>
           </button>
         )
       })}
