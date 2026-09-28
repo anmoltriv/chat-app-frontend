@@ -10,6 +10,7 @@ body,
 
 html {
   -webkit-text-size-adjust: 100%;
+  color-scheme: dark;
 }
 
 :root {
@@ -17,14 +18,14 @@ html {
   --foreground: #f0f0f8;
   --card: #13131a;
   --card-foreground: #e8e8f0;
-  --primary: #7c5cfc;
+  --primary: #b57a4a;
   --primary-foreground: #ffffff;
   --secondary: #1c1c28;
   --secondary-foreground: #a0a0b8;
   --muted: #1a1a24;
   --muted-foreground: #6b6b80;
   --border: #232330;
-  --accent: #a78bfa;
+  --accent: #d2b48c;
   --radius: 10px;
 }
 
@@ -61,7 +62,7 @@ textarea.talkative-input::placeholder {
 input.talkative-input:focus,
 textarea.talkative-input:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(124, 92, 252, 0.2);
+  box-shadow: 0 0 0 3px rgba(181, 122, 74, 0.2);
 }
 
 .btn-primary {
@@ -230,7 +231,7 @@ textarea.talkative-input:focus {
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  background: linear-gradient(135deg, #7c5cfc, #a78bfa);
+  background: linear-gradient(135deg, #b57a4a, #d2b48c);
   color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
@@ -271,16 +272,16 @@ textarea.talkative-input:focus {
 }
 
 .room-row.active {
-  background: rgba(124, 92, 252, 0.15);
-  border-color: rgba(124, 92, 252, 0.25);
+  background: rgba(181, 122, 74, 0.15);
+  border-color: rgba(181, 122, 74, 0.25);
 }
 
 .room-avatar {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background: rgba(124, 92, 252, 0.18);
-  color: #a78bfa;
+  background: rgba(181, 122, 74, 0.18);
+  color: #d2b48c;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -395,11 +396,11 @@ body:has(.home-page),
 
 .home-gradient-text {
   display: inline;
-  background: linear-gradient(90deg, #7c5cfc 0%, #a78bfa 100%);
+  color: #d2b48c;
+  background: linear-gradient(90deg, #c48a58 0%, #e4c7a4 55%, #b57a4a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
@@ -456,6 +457,12 @@ body:has(.home-page),
   height: 16rem;
   max-width: 100%;
   pointer-events: none;
+  background: radial-gradient(
+    ellipse 80% 72% at 50% 42%,
+    rgba(181, 122, 74, 0.2) 0%,
+    rgba(181, 122, 74, 0.08) 36%,
+    rgba(11, 11, 16, 0) 70%
+  );
 }
 
 .home-hero-kicker {
@@ -465,8 +472,8 @@ body:has(.home-page),
   flex-wrap: wrap;
   gap: 6px;
   max-width: 100%;
-  background: rgba(124, 92, 252, 0.1);
-  border: 1px solid rgba(124, 92, 252, 0.28);
+  background: rgba(181, 122, 74, 0.1);
+  border: 1px solid rgba(181, 122, 74, 0.28);
   border-radius: 40px;
   padding: 5px 12px;
   margin-bottom: 1.25rem;

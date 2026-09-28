@@ -64,12 +64,12 @@ export default function MessageComposer({
             justifyContent: "space-between",
             marginBottom: "0.5rem",
             padding: "0.375rem 0.625rem",
-            background: "rgba(124,92,252,0.1)",
-            border: "1px solid rgba(124,92,252,0.2)",
+            background: "rgba(181,122,74,0.1)",
+            border: "1px solid rgba(181,122,74,0.2)",
             borderRadius: 7,
           }}
         >
-          <span style={{ fontSize: "0.8125rem", color: "#a78bfa" }}>Editing message</span>
+          <span style={{ fontSize: "0.8125rem", color: "#d2b48c" }}>Editing message</span>
           <button
             onClick={onCancelEdit}
             style={{ background: "none", border: "none", cursor: "pointer", color: "var(--muted-foreground)", fontSize: "0.8125rem", padding: 0 }}

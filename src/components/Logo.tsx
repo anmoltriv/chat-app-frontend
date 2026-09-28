@@ -16,13 +16,13 @@ export default function Logo({ size = "md", showWordmark = true }: LogoProps) {
         style={{
           width: px,
           height: px,
-          background: "linear-gradient(135deg, #7c5cfc 0%, #a78bfa 100%)",
+          background: "linear-gradient(135deg, #b57a4a 0%, #d2b48c 100%)",
           borderRadius: "50%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           flexShrink: 0,
-          boxShadow: "0 0 16px rgba(124, 92, 252, 0.4)",
+          boxShadow: "0 0 16px rgba(181, 122, 74, 0.4)",
         }}
       >
         <span

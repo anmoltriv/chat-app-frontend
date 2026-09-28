@@ -38,7 +38,7 @@ export default function UserProfile({ user, wsStatus, onLogout }: UserProfilePro
           width: 34,
           height: 34,
           borderRadius: "50%",
-          background: "linear-gradient(135deg, #7c5cfc, #a78bfa)",
+          background: "linear-gradient(135deg, #b57a4a, #d2b48c)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

@@ -23,13 +23,13 @@ export default function ChatHeader({ room, onOpenMembers, onLeave, onBack }: Cha
             width: 36,
             height: 36,
             borderRadius: "50%",
-            background: "rgba(124,92,252,0.15)",
+            background: "rgba(181,122,74,0.15)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             fontWeight: 700,
             fontSize: 14,
-            color: "#a78bfa",
+            color: "#d2b48c",
             flexShrink: 0,
           }}
         >
@@ -57,8 +57,8 @@ export default function ChatHeader({ room, onOpenMembers, onLeave, onBack }: Cha
               <span
                 style={{
                   marginLeft: 6,
-                  background: "rgba(124,92,252,0.18)",
-                  color: "#a78bfa",
+                  background: "rgba(181,122,74,0.18)",
+                  color: "#d2b48c",
                   borderRadius: 4,
                   padding: "1px 5px",
                   fontSize: "0.6875rem",
