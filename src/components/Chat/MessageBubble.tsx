@@ -22,7 +22,7 @@ function avatar(name: string) {
 }
 
 function colorFromId(id: number) {
-  const palette = ["#7c5cfc", "#06b6d4", "#f59e0b", "#ec4899", "#10b981", "#f97316"]
+  const palette = ["#b57a4a", "#06b6d4", "#f59e0b", "#ec4899", "#10b981", "#f97316"]
   return palette[id % palette.length]
 }
 

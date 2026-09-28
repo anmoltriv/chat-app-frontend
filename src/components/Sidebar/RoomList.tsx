@@ -53,8 +53,8 @@ export default function RoomList({ rooms, activeRoomId, onSelect, emptyLabel }: 
                     style={{
                       fontSize: "0.625rem",
                       fontWeight: 600,
-                      color: "#a78bfa",
-                      background: "rgba(124,92,252,0.15)",
+                      color: "#d2b48c",
+                      background: "rgba(181,122,74,0.15)",
                       borderRadius: 4,
                       padding: "1px 4px",
                       flexShrink: 0,

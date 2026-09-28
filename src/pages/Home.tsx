@@ -7,8 +7,8 @@ const features = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <rect x="3" y="11" width="18" height="11" rx="2" stroke="#a78bfa" strokeWidth="2" />
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#a78bfa" strokeWidth="2" />
+        <rect x="3" y="11" width="18" height="11" rx="2" stroke="#d2b48c" strokeWidth="2" />
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#d2b48c" strokeWidth="2" />
       </svg>
     ),
     title: "Private by default",
@@ -17,27 +17,27 @@ const features = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#d2b48c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
     title: "Real-time messaging",
-    desc: "Messages arrive instantly. No refresh, no lag â€” just fluid, live conversation the moment you type.",
+    desc: "Messages arrive instantly. No refresh, no lag  — just fluid, live conversation the moment you type.",
   },
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="9" cy="7" r="4" stroke="#a78bfa" strokeWidth="2" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" />
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#d2b48c" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="9" cy="7" r="4" stroke="#d2b48c" strokeWidth="2" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#d2b48c" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
     title: "Rooms for every team",
-    desc: "Spin up rooms in seconds â€” for projects, topics, or just your inner circle. Organized, not chaotic.",
+    desc: "Spin up rooms in seconds  — for projects, topics, or just your inner circle. Organized, not chaotic.",
   },
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="#d2b48c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
     title: "Zero noise",
@@ -46,8 +46,8 @@ const features = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="9" stroke="#a78bfa" strokeWidth="2" />
-        <polyline points="12 6 12 12 16 14" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="12" cy="12" r="9" stroke="#d2b48c" strokeWidth="2" />
+        <polyline points="12 6 12 12 16 14" stroke="#d2b48c" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
     title: "Persistent history",
@@ -56,18 +56,18 @@ const features = [
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <rect x="2" y="3" width="20" height="14" rx="2" stroke="#a78bfa" strokeWidth="2" />
-        <line x1="8" y1="21" x2="16" y2="21" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" />
-        <line x1="12" y1="17" x2="12" y2="21" stroke="#a78bfa" strokeWidth="2" strokeLinecap="round" />
+        <rect x="2" y="3" width="20" height="14" rx="2" stroke="#d2b48c" strokeWidth="2" />
+        <line x1="8" y1="21" x2="16" y2="21" stroke="#d2b48c" strokeWidth="2" strokeLinecap="round" />
+        <line x1="12" y1="17" x2="12" y2="21" stroke="#d2b48c" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
     title: "Works everywhere",
-    desc: "Browser-first and fully responsive. Open a room on your laptop, continue on your phone â€” seamlessly.",
+    desc: "Browser-first and fully responsive. Open a room on your laptop, continue on your phone  — seamlessly.",
   },
 ]
 
 const steps = [
-  { step: "01", title: "Create your account", desc: "Sign up in under 30 seconds â€” no credit card, no setup friction." },
+  { step: "01", title: "Create your account", desc: "Sign up in under 30 seconds  — no credit card, no setup friction." },
   { step: "02", title: "Open a room", desc: "Name it, set it private or public, and share the invite code with whoever you want inside." },
   { step: "03", title: "Start talking", desc: "Messages flow in real time. Search, scroll, and pick up the thread any time." },
 ]
@@ -81,7 +81,7 @@ const stats = [
 
 const testimonials = [
   {
-    quote: "We moved our entire design critique process into talkative. The private rooms changed how we give feedback â€” much more candid.",
+    quote: "We moved our entire design critique process into talkative. The private rooms changed how we give feedback  — much more candid.",
     author: "Sofia Laurent",
     role: "Lead Designer, Luminary Studio",
     initials: "SL",
@@ -99,7 +99,7 @@ const testimonials = [
     author: "Aria Chen",
     role: "Freelance Consultant",
     initials: "AC",
-    color: "#7c5cfc",
+    color: "#b57a4a",
   },
 ]
 
@@ -139,13 +139,12 @@ export default function Home() {
             top: 0,
             left: "50%",
             transform: "translateX(-50%)",
-            background: "radial-gradient(ellipse, rgba(124,92,252,0.14) 0%, transparent 68%)",
           }}
         />
 
         <div className="home-hero-kicker">
-          <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#7c5cfc", flexShrink: 0 }} />
-          <span style={{ fontSize: "0.75rem", fontWeight: 500, color: "#a78bfa" }}>Room-based chat, reimagined</span>
+          <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#b57a4a", flexShrink: 0 }} />
+          <span style={{ fontSize: "0.75rem", fontWeight: 500, color: "#d2b48c" }}>Room-based chat, reimagined</span>
         </div>
 
         <h1>
@@ -155,7 +154,7 @@ export default function Home() {
         </h1>
 
         <p className="home-lede">
-          talkative gives you private, organized spaces to collaborate and connect â€” without the noise of traditional chat apps.
+          talkative gives you private, organized spaces to collaborate and connect — without the noise of traditional chat apps.
         </p>
 
         <div className="home-cta-row">
@@ -169,9 +168,9 @@ export default function Home() {
 
         <div className="home-trust">
           {[
-            { icon: "ðŸ”’", label: "End-to-end encrypted" },
-            { icon: "âš¡", label: "Real-time sync" },
-            { icon: "ðŸ›¡ï¸", label: "No ads. Ever." },
+            { icon: "🔒", label: "End-to-end encrypted" },
+            { icon: "⚡", label: "Real-time sync" },
+            { icon: "🛡️", label: "No ads. Ever." },
           ].map((item) => (
             <div key={item.label} style={{ display: "flex", alignItems: "center", gap: 6 }}>
               <span style={{ fontSize: "0.875rem" }}>{item.icon}</span>
@@ -214,7 +213,7 @@ export default function Home() {
             </p>
             <h2>Built for focus, not distraction</h2>
             <p style={{ color: "var(--secondary-foreground)", fontSize: "0.9375rem", marginTop: "0.75rem", maxWidth: 480, marginInline: "auto" }}>
-              Every feature in talkative exists because real users needed it â€” nothing added just to fill a changelog.
+              Every feature in talkative exists because real users needed it  — nothing added just to fill a changelog.
             </p>
           </div>
 
@@ -235,8 +234,8 @@ export default function Home() {
                     width: 44,
                     height: 44,
                     borderRadius: 11,
-                    background: "rgba(124,92,252,0.1)",
-                    border: "1px solid rgba(124,92,252,0.18)",
+                    background: "rgba(181,122,74,0.1)",
+                    border: "1px solid rgba(181,122,74,0.18)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -287,7 +286,7 @@ export default function Home() {
                       width: 40,
                       height: 40,
                       borderRadius: "50%",
-                      background: "linear-gradient(135deg, #7c5cfc, #a78bfa)",
+                      background: "linear-gradient(135deg, #b57a4a, #d2b48c)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -304,7 +303,7 @@ export default function Home() {
                         width: 1,
                         flex: 1,
                         minHeight: 24,
-                        background: "linear-gradient(to bottom, rgba(124,92,252,0.4), rgba(124,92,252,0.05))",
+                        background: "linear-gradient(to bottom, rgba(181,122,74,0.4), rgba(181,122,74,0.05))",
                         margin: "6px 0",
                       }}
                     />
@@ -342,7 +341,7 @@ export default function Home() {
                 }}
               >
                 <svg width="28" height="20" viewBox="0 0 28 20" fill="none" style={{ marginBottom: "0.75rem" }}>
-                  <path d="M0 20V12C0 5.373 3.82 1.4 11.46 0l1.12 1.96C9.107 2.84 7.28 5.04 6.72 8.56H12V20H0ZM16 20V12C16 5.373 19.82 1.4 27.46 0l1.12 1.96c-3.473.88-5.3 3.08-5.86 6.6H28V20H16Z" fill="rgba(124,92,252,0.3)" />
+                  <path d="M0 20V12C0 5.373 3.82 1.4 11.46 0l1.12 1.96C9.107 2.84 7.28 5.04 6.72 8.56H12V20H0ZM16 20V12C16 5.373 19.82 1.4 27.46 0l1.12 1.96c-3.473.88-5.3 3.08-5.86 6.6H28V20H16Z" fill="rgba(181,122,74,0.3)" />
                 </svg>
                 <p style={{ fontSize: "0.875rem", color: "var(--card-foreground)", lineHeight: 1.65, marginBottom: "1.25rem" }}>
                   "{t.quote}"
@@ -391,7 +390,6 @@ export default function Home() {
               top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
-              background: "radial-gradient(ellipse, rgba(124,92,252,0.12) 0%, transparent 70%)",
             }}
           />
           <h2
